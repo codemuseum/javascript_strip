@@ -6,7 +6,7 @@ module Javascript
   class Strip
     attr_reader :html
     
-    HTML_EVENT_HANDLERS==%w{onload onunload onchange onsubmit onreset onselect onblur onfocus onkeydown onkeypress onkeyup onclick ondblclick onmousedown onmouseover onmouseout onmouseup}
+    HTML_EVENT_HANDLERS=%w{onload onunload onchange onsubmit onreset onselect onblur onfocus onkeydown onkeypress onkeyup onclick ondblclick onmousedown onmouseover onmouseout onmouseup}
     
     def initialize(html)
       @html=html
