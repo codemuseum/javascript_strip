@@ -24,9 +24,9 @@ asfasdfsadf
 <a href="" ondblclick=\"function() {};\"></a>
 <a href="" onclick=\"function() {};\"></a>
 <a href="" onmouseover=\"function() {};\"></a>"
-
+    
     expected_html="<a href=\"\">afadsfasd</a><a href=\"\">afadsfasd</a>\n\n\n<a href=\"\"></a>\n<a href=\"\"></a>\n<a href=\"\"></a>"
-
+    
     jss = Javascript::Strip.new(html)
     jsstripped_html=jss.strip
     assert_equal(expected_html, jsstripped_html)
