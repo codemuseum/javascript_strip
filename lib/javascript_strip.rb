@@ -28,6 +28,8 @@ module Javascript
         e.remove_attribute "href"
         e.set_attribute("href", "")
       end
-    end
+ 
+      doc.to_s
+   end
   end
 end
