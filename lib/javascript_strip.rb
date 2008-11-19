@@ -23,12 +23,25 @@ module Javascript
       # strip <script> inclusions
       doc.search("script").remove
       
-      # strip javascript: in href attribute
-      doc.search("[@href^='javascript:']").each do |e|
+      # strip javascript: and java\nscript in href ...
+      doc.search("[@href*='javascript:']").each do |e|
         e.remove_attribute "href"
         e.set_attribute("href", "")
       end
- 
+      doc.search("[@href*='java\nscript:']").each do |e|
+        e.remove_attribute "href"
+        e.set_attribute("href", "")
+      end
+      # ... and style attributes
+      doc.search("[@style*='javascript:']").each do |e|
+        e.remove_attribute "style"
+        e.set_attribute("style", "")
+      end
+      doc.search("[@style*='java\nscript:']").each do |e|
+        e.remove_attribute "style"
+        e.set_attribute("style", "")
+      end
+
       doc.to_s
    end
   end
